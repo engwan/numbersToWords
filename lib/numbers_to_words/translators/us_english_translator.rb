@@ -21,12 +21,12 @@ module NumbersToWords
     def to_spoken(val)
       case val <=> 0
       when -1
-          'negative ' + to_spoken(-val)
+        'negative ' + to_spoken(-val)
       when 0
-          DIGITS[0]
+        DIGITS[0]
       else
-          group(val, 0).flatten.join(' ')
-      end
+        group(val, 0).flatten.join(' ')
+      end.squeeze(" ").strip
     end
 
     private
@@ -45,14 +45,14 @@ module NumbersToWords
       x = [('and' if @conjunction and junction)]    # wyf?
       case val
       when 0
-          []
+        []
       when 1...10
-          x << DIGITS[val]
+        x << DIGITS[val]
       when 10...20
-          x << TEENS[val - 10]
+        x << TEENS[val - 10]
       else
-          d = val % 10
-          x << (TENS[val / 10] + ('-' + DIGITS[d] if d != 0).to_s)
+        d = val % 10
+        x << (TENS[val / 10] + ('-' + DIGITS[d] if d != 0).to_s)
       end
     end
 

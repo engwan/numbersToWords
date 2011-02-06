@@ -1,0 +1,14 @@
+Manifest
+README
+Rakefile
+init.rb
+lib/numbers_to_words.rb
+lib/numbers_to_words/helpers.rb
+lib/numbers_to_words/helpers/float_helper.rb
+lib/numbers_to_words/helpers/integer_helper.rb
+lib/numbers_to_words/translators.rb
+lib/numbers_to_words/translators/us_english_translator.rb
+spec/helpers/float_spec.rb
+spec/helpers/integer_spec.rb
+spec/spec_helper.rb
+spec/translators/english_spec.rb
