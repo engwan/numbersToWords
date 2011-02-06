@@ -5,8 +5,8 @@ module NumbersToWords
     autoload :FloatHelper, File.join(File.dirname(__FILE__), 'helpers/float_helper')
 
     def self.attach_helper_methods!
+      Numeric.send(:include, FloatHelper)
       Integer.send(:include, IntegerHelper)
-      Float.send(:include, FloatHelper)
     end
 
   end

@@ -17,4 +17,8 @@ describe Float do
     42312.54.to_currency.should == "forty-two thousand three hundred twelve Pesos and fifty-four Centavos"
   end
 
+  it "should not display cents when zero" do
+    20.0.to_currency.should == "twenty Pesos"
+  end
+
 end

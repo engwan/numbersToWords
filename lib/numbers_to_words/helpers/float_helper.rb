@@ -11,9 +11,14 @@ module NumbersToWords
       currency = translator.to_spoken(number.floor)
       currency << ' Pesos' if currency != 'one'
       currency << ' Peso' if currency == 'one'
+
       change = ((number - number.to_i) * 100).round
-      cent = change == 1 ? 'Centavo' : 'Centavos'
-      currency << ' and ' << translator.to_spoken(change) << " #{cent}"
+      if change > 0
+        cent = change == 1 ? 'Centavo' : 'Centavos'
+        currency << ' and ' << translator.to_spoken(change) << " #{cent}"
+      end
+
+      currency
     end
 
   end
